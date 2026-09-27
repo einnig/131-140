@@ -182,12 +182,14 @@
         <select id="languageSelect" onchange="updateUI()">
             <option value="" selected disabled>Veldu tungumál...</option>
             <option value="ar">Arabíska – العربية</option>
+            <option value="be">Belgíska (Flæmska) – Vlaams</option>
             <option value="da">Danska – Dansk</option>
             <option value="en">Enska – English</option>
             <option value="tl">Filippseyska – Tagalog</option>
             <option value="fi">Finnska – Suomi</option>
             <option value="fr">Franska – Français</option>
             <option value="fo">Færeyska – Føroyskt</option>
+            <option value="kl">Grænlenska – Kalaallisut</option>
             <option value="nl">Hollenska – Nederlands</option>
             <option value="it">Ítalska – Italiano</option>
             <option value="ja">Japanska – 日本語</option>
@@ -239,12 +241,14 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b><br>1. (Nafnorð) Vegur, stefna eða aðferð til að gera eitthvað.<br>2. (Sagnorð) Þátíð af sögninni 'að líða' (mér leið vel).<br><br><b>Dæmi 1:</b> Ég rata ekki þessa <b>leið</b>.<br><b>Dæmi 2:</b> Mér <b>leið</b> mjög vel í gær.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b><br>1. (اسم) طريق، مسار أو طريقة.<br>2. (فعل) الفعل 'يشعر' في الماضي.<br><b>مثال 1:</b> أنا لا أعرف هذا <b>الطريق</b>.<br><b>مثال 2:</b> لقد <b>شعرت</b> بتحسن كبير البارحة.</div>",
+            "be": "<b>Uitleg:</b><br>1. (Zelfstandig naamwoord) Een pad of manier om iets te doen.<br>2. (Werkwoord) Verleden tijd van 'zich voelen' (ik voelde me).<br><b>Voorbeeld 1:</b> Ik ken deze <b>weg</b> niet.<br><b>Voorbeeld 2:</b> Ik <b>voelde me</b> gisteren heel goed.",
             "da": "<b>Forklaring:</b><br>1. (Navneord) En vej, rute eller måde at gøre noget på.<br>2. (Udsagnsord) Datid af 'at have det' (føle sig).<br><b>Eksempel 1:</b> Jeg kender ikke denne <b>vej</b>.<br><b>Eksempel 2:</b> Jeg <b>havde det</b> meget godt i går.",
             "en": "<b>Explanation:</b><br>1. (Noun) A path, route, or way of doing something.<br>2. (Verb) Past tense of 'to feel' (I felt).<br><b>Example 1:</b> I do not know this <b>way</b>.<br><b>Example 2:</b> I <b>felt</b> very good yesterday.",
             "tl": "<b>Paliwanag:</b><br>1. (Pangngalan) Isang daan, ruta, o paraan ng paggawa ng isang bagay.<br>2. (Pandiwa) Nakaraang panahunan ng 'pakiramdam' (naramdaman).<br><b>Halimbawa 1:</b> Hindi ko alam ang <b>daan</b> na ito.<br><b>Halimbawa 2:</b> Napakabuti ng <b>pakiramdam</b> ko kahapon.",
             "fi": "<b>Selitys:</b><br>1. (Substantiivi) Polku, reitti tai tapa tehdä jotain.<br>2. (Verbi) Verbin 'tuntea' imperfekti (minusta tuntui).<br><b>Esimerkki 1:</b> En tiedä tätä <b>tietä</b>.<br><b>Esimerkki 2:</b> Minusta <b>tuntui</b> erittäin hyvältä eilen.",
             "fr": "<b>Explication:</b><br>1. (Nom) Un chemin, une route ou une manière de faire.<br>2. (Verbe) Le passé du verbe 'se sentir' (je me suis senti).<br><b>Exemple 1:</b> Je ne connais pas ce <b>chemin</b>.<br><b>Exemple 2:</b> Je me <b>suis senti</b> très bien hier.",
             "fo": "<b>Frágreiðing:</b><br>1. (Navnorð) Ein vegur, kós ella máti at gera okkurt á.<br>2. (Sagnorð) Tátíð av 'at líða' (mær leið).<br><b>Dømi 1:</b> Eg fari ikki rætta <b>leið</b>.<br><b>Dømi 2:</b> Mær <b>leið</b> sera væl í gjár.",
+            "kl": "<b>Nassoqqaat:</b><br>1. (Navneord) Aqqut, periaaseq.<br>2. (Udsagnsord) Misigisimavoq (qanganisaq).<br><b>Assersuut 1:</b> Aqqut una ilisimanngilara.<br><b>Assersuut 2:</b> Ippassaq ajunngivippunga.",
             "nl": "<b>Uitleg:</b><br>1. (Zelfstandig naamwoord) Een pad, route of manier om iets te doen.<br>2. (Werkwoord) Verleden tijd van 'zich voelen' (ik voelde me).<br><b>Voorbeeld 1:</b> Ik ken deze <b>weg</b> niet.<br><b>Voorbeeld 2:</b> Ik <b>voelde me</b> gisteren heel goed.",
             "it": "<b>Spiegazione:</b><br>1. (Sostantivo) Un sentiero, una strada o un modo di fare qualcosa.<br>2. (Verbo) Passato di 'sentirsi' (mi sono sentito).<br><b>Esempio 1:</b> Non conosco questa <b>strada</b>.<br><b>Esempio 2:</b> Mi <b>sono sentito</b> molto bene ieri.",
             "ja": "<b>説明:</b><br>1. (名詞) 道、ルート、または方法。<br>2. (動詞) 「感じる」の過去形。<br><b>例文 1:</b> 私はこの<b>道</b>を知りません。<br><b>例文 2:</b> 私は昨日とても気分が<b>良かった</b>です。",
@@ -271,17 +275,19 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b> (Töluorð / Fornafn) Talan 1 í hvorugkyni.<br><br><b>Dæmi:</b> Ég á <b>eitt</b> epli.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b> (رقم / ضمير) العدد 1 للمحايد.<br><b>مثال:</b> لدي تفاحة <b>واحدة</b>.</div>",
+            "be": "<b>Uitleg:</b> (Telwoord) Het getal 1 in onzijdige vorm.<br><b>Voorbeeld:</b> Ik heb <b>één</b> appel.",
             "da": "<b>Forklaring:</b> (Talord / Stedord) Tallet 1 i intetkøn.<br><b>Eksempel:</b> Jeg har <b>ét</b> æble.",
             "en": "<b>Explanation:</b> (Numeral / Pronoun) The number 1 in neuter gender.<br><b>Example:</b> I have <b>one</b> apple.",
             "tl": "<b>Paliwanag:</b> (Pamilang / Panghalip) Ang numerong 1 sa walang kasariang anyo.<br><b>Halimbawa:</b> Mayroon akong <b>isang</b> mansanas.",
             "fi": "<b>Selitys:</b> (Lukusana / Pronomini) Numero 1 neutrimuodossa.<br><b>Esimerkki:</b> Minulla on <b>yksi</b> omena.",
             "fr": "<b>Explication:</b> (Numéral / Pronom) Le chiffre 1 au genre neutre.<br><b>Exemple:</b> J'ai <b>une</b> pomme.",
             "fo": "<b>Frágreiðing:</b> (Talorð / Fornavn) Talið 1 í hvørkikyni.<br><b>Dømi:</b> Eg eigi <b>eitt</b> súrepli.",
+            "kl": "<b>Nassoqqaat:</b> (Navneord) Ataaseq.<br><b>Assersuut:</b> Iipilimik <b>ataatsimik</b> peqarpunga.",
             "nl": "<b>Uitleg:</b> (Telwoord / Voornaamwoord) Het getal 1 in de onzijdige vorm.<br><b>Voorbeeld:</b> Ik heb <b>één</b> appel.",
             "it": "<b>Spiegazione:</b> (Numerale / Pronome) Il numero 1 al genere neutro.<br><b>Esempio:</b> Ho <b>una</b> mela.",
             "ja": "<b>説明:</b> (数詞 / 代名詞) 中性形の数字の 1。<br><b>例文:</b> 私はりんごを<b>一つ</b>持っています。",
             "zh": "<b>解释:</b> (数词 / 代词) 中性的数字 1。<br><b>例句:</b> 我有<b>一个</b>苹果。",
-            "ku": "<b>Ravekirin:</b> (Hejmar / Cînav) Hejmara 1 di forma nêtar de.<br><b>Mînak:</b> <b>Yek</b> sêva min heye.",
+            "ku": "<b>Ravekirin:</b> (Hejmar / Cînav) Hejmara 1 di forma nêtar de.<br><b>Mînak:</b> Sêveke min a <b>yek</b> heye.",
             "lv": "<b>Paskaidrojums:</b> (Skaitļa vārds / Vietniekvārds) Skaitlis 1 nekatrajā dzimtē.<br><b>Piemērs:</b> Man ir <b>viens</b> ābols.",
             "lt": "<b>Paaiškinimas:</b> (Skaitvardis / Įvardis) Skaičius 1 bevardėje giminėje.<br><b>Pavyzdys:</b> Aš turiu <b>vieną</b> obuolį.",
             "no": "<b>Forklaring:</b> (Tallord / Pronomen) Tallet 1 i intetkjønn.<br><b>Eksempel:</b> Jeg har <b>ett</b> eple.",
@@ -303,12 +309,14 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b> (Sagnorð) Sögnin 'að hafa' í þátíð fleirtölu (við/þið/þeir/þær/þau).<br><br><b>Dæmi:</b> Þeir <b>höfðu</b> ekki tíma.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b> (فعل) الفعل 'يمتلك' في الماضي للجمع (كان لدينا/لديكم/لديهم).<br><b>مثال:</b> لم <b>يكن لديهم</b> وقت.</div>",
+            "be": "<b>Uitleg:</b> (Werkwoord) Verleden tijd van 'hebben' voor meervoud (hadden).<br><b>Voorbeeld:</b> Zij <b>hadden</b> geen tijd.",
             "da": "<b>Forklaring:</b> (Udsagnsord) Udsagnsordet 'at have' i datid flertal (vi/I/de havde).<br><b>Eksempel:</b> De <b>havde</b> ikke tid.",
             "en": "<b>Explanation:</b> (Verb) The verb 'to have' in past tense plural (we/you all/they had).<br><b>Example:</b> They <b>had</b> no time.",
             "tl": "<b>Paliwanag:</b> (Pandiwa) Ang pandiwang 'magkaroon' sa nakaraang panahunan para sa maramihan (nagkaroon kami/kayo/sila).<br><b>Halimbawa:</b> Wala <b>silang</b> oras.",
             "fi": "<b>Selitys:</b> (Verbi) Verbi 'olla' (omistaa) imperfektin monikossa (meillä/teillä/heillä oli).<br><b>Esimerkki:</b> Heillä ei <b>ollut</b> aikaa.",
             "fr": "<b>Explication:</b> (Verbe) Le verbe 'avoir' au passé pluriel (nous avions / vous aviez / ils avaient).<br><b>Exemple:</b> Ils n'<b>avaient</b> pas le temps.",
             "fo": "<b>Frágreiðing:</b> (Sagnorð) Sagnorðið 'at hava' í tátíð fleirtali (vit/tit/teir høvdu).<br><b>Dømi:</b> Teir <b>høvdu</b> onga tíð.",
+            "kl": "<b>Nassoqqaat:</b> (Udsagnsord) Peqarput (qanganisaq).<br><b>Assersuut:</b> Piffissaqanngillat (Tíma <b>höfðu</b> ekki).",
             "nl": "<b>Uitleg:</b> (Werkwoord) Het werkwoord 'hebben' in de verleden tijd meervoud (wij/jullie/zij hadden).<br><b>Voorbeeld:</b> Zij <b>hadden</b> geen tijd.",
             "it": "<b>Spiegazione:</b> (Verbo) Il verbo 'avere' al passato plurale (avevamo/avevate/avevano).<br><b>Esempio:</b> Loro non <b>avevano</b> tempo.",
             "ja": "<b>説明:</b> (動詞) 「持つ」の過去複数形（私たちは/あなたたちは/彼らは持っていた）。<br><b>例文:</b> 彼らは時間が<b>ありませんでした</b>。",
@@ -332,34 +340,36 @@ const exerciseData = [
     },
     { 
         text: "eiga", 
-        is_exp: "<b>Útskýring:</b><br>1. (Sagnorð) Að vera eigandi að einhverju (að eiga).<br>2. (Sagnorð) Að þurfa að gera eitthvað (að eiga að).<br><br><b>Dæmi 1:</b> Þau <b>eiga</b> stórt hús.<br><b>Dæmi 2:</b> Við <b>eigum</b> að fara að sofa.",
+        is_exp: "<b>Útskýring:</b><br>1. (Sagnorð) Að vera eigandi að einhverju.<br>2. (Sagnorð) Að þurfa að gera eitthvað (að eiga að).<br><br><b>Dæmi 1:</b> Þau <b>eiga</b> stórt hús.<br><b>Dæmi 2:</b> Þau <b>eiga</b> að fara að sofa.",
         translations: {
-            "ar": "<div dir='rtl'><b>الشرح:</b><br>1. (فعل) أن تكون مالكاً لشيء ما.<br>2. (فعل) أن تضطر للقيام بشيء (يجب أن).<br><b>مثال 1:</b> هم <b>يملكون</b> منزلاً كبيراً.<br><b>مثال 2:</b> نحن <b>يجب (يُفترض بنا)</b> أن نذهب للنوم.</div>",
-            "da": "<b>Forklaring:</b><br>1. (Udsagnsord) At eje noget.<br>2. (Udsagnsord) At skulle gøre noget (at burde/skulle).<br><b>Eksempel 1:</b> De <b>ejer</b> et stort hus.<br><b>Eksempel 2:</b> Vi <b>skal</b> gå i seng.",
-            "en": "<b>Explanation:</b><br>1. (Verb) To own or possess something.<br>2. (Verb) To have to or be supposed to do something.<br><b>Example 1:</b> They <b>own</b> a big house.<br><b>Example 2:</b> We <b>are supposed to</b> go to sleep.",
-            "tl": "<b>Paliwanag:</b><br>1. (Pandiwa) Magmay-ari ng isang bagay.<br>2. (Pandiwa) Dapat o kailangang gawin ang isang bagay.<br><b>Halimbawa 1:</b> <b>May-ari</b> sila ng malaking bahay.<br><b>Halimbawa 2:</b> <b>Dapat</b> na tayong matulog.",
-            "fi": "<b>Selitys:</b><br>1. (Verbi) Omistaa jotakin.<br>2. (Verbi) Pitäisi tai täytyy tehdä jotain.<br><b>Esimerkki 1:</b> He <b>omistavat</b> ison talon.<br><b>Esimerkki 2:</b> Meidän <b>pitäisi</b> mennä nukkumaan.",
-            "fr": "<b>Explication:</b><br>1. (Verbe) Posséder ou être propriétaire de quelque chose.<br>2. (Verbe) Devoir faire quelque chose ou être censé le faire.<br><b>Exemple 1:</b> Ils <b>possèdent</b> une grande maison.<br><b>Exemple 2:</b> Nous <b>sommes censés (devons)</b> aller dormir.",
-            "fo": "<b>Frágreiðing:</b><br>1. (Sagnorð) At eiga okkurt.<br>2. (Sagnorð) At eiga at gera okkurt (at skula).<br><b>Dømi 1:</b> Tey <b>eiga</b> eitt stórt hús.<br><b>Dømi 2:</b> Vit <b>eiga</b> at fara at sova.",
-            "nl": "<b>Uitleg:</b><br>1. (Werkwoord) Iets bezitten.<br>2. (Werkwoord) Iets moeten doen of geacht worden te doen.<br><b>Voorbeeld 1:</b> Zij <b>bezitten (hebben)</b> een groot huis.<br><b>Voorbeeld 2:</b> Wij <b>horen (moeten)</b> te gaan slapen.",
-            "it": "<b>Spiegazione:</b><br>1. (Verbo) Possedere qualcosa.<br>2. (Verbo) Dover fare qualcosa o essere tenuti a farlo.<br><b>Esempio 1:</b> Loro <b>possiedono</b> una grande casa.<br><b>Esempio 2:</b> Noi <b>dovremmo</b> andare a dormire.",
-            "ja": "<b>説明:</b><br>1. (動詞) 何かを所有する。<br>2. (動詞) 何かをしなければならない（～するべき）。<br><b>例文 1:</b> 彼らは大きな家を<b>所有して</b>います。<br><b>例文 2:</b> 私たちは寝る<b>べき（はず）</b>です。",
-            "zh": "<b>解释:</b><br>1. (动词) 拥有某物。<br>2. (动词) 应该或必须做某事。<br><b>例句 1:</b> 他们<b>拥有</b>一栋大房子。<br><b>例句 2:</b> 我们<b>应该</b>去睡觉了。",
-            "ku": "<b>Ravekirin:</b><br>1. (Lêker) Xwediyê tiştekî bûn.<br>2. (Lêker) Divê tiştek were kirin (pêwîst e).<br><b>Mînak 1:</b> Ew <b>xwediyê</b> xaniyek mezin in.<br><b>Mînak 2:</b> <b>Divê</b> em biçin raze.",
-            "lv": "<b>Paskaidrojums:</b><br>1. (Darbības vārds) Piederēt kaut kam (būt īpašniekam).<br>2. (Darbības vārds) Vajadzība kaut ko darīt (vajadzētu).<br><b>Piemērs 1:</b> Viņiem <b>pieder</b> liela māja.<br><b>Piemērs 2:</b> Mums <b>vajadzētu (mēs esam paredzēti)</b> iet gulēt.",
-            "lt": "<b>Paaiškinimas:</b><br>1. (Veiksmažodis) Turėti kažką (būti savininku).<br>2. (Veiksmažodis) Privalėti ar turėti kažką daryti.<br><b>Pavyzdys 1:</b> Jie <b>turi (valdo)</b> didelį namą.<br><b>Pavyzdys 2:</b> Mes <b>turėtume</b> eiti miegoti.",
-            "no": "<b>Forklaring:</b><br>1. (Verb) Å eie noe.<br>2. (Verb) Å burde eller måtte gjøre noe.<br><b>Eksempel 1:</b> De <b>eier</b> et stort hus.<br><b>Eksempel 2:</b> Vi <b>bør (skal)</b> gå og legge oss.",
-            "fa": "<div dir='rtl'><b>توضیح:</b><br>1. (فعل) مالک بودن چیزی.<br>2. (فعل) مجبور بودن یا قرار بودن برای انجام کاری.<br><b>مثال 1:</b> آن‌ها یک خانه بزرگ <b>دارند (مالک هستند)</b>.<br><b>مثال 2:</b> ما <b>باید (قرار است)</b> بخوابیم.</div>",
-            "pt": "<b>Explicação:</b><br>1. (Verbo) Possuir algo.<br>2. (Verbo) Ter que ou dever fazer algo.<br><b>Exemplo 1:</b> Eles <b>possuem</b> uma casa grande.<br><b>Exemplo 2:</b> Nós <b>devemos (temos que)</b> ir dormir.",
-            "pl": "<b>Wyjaśnienie:</b><br>1. (Czasownik) Posiadać coś.<br>2. (Czasownik) Mieć obowiązek coś zrobić (powinienem/muszę).<br><b>Przykład 1:</b> Oni <b>posiadają</b> duży dom.<br><b>Przykład 2:</b> <b>Powinniśmy</b> iść spać.",
-            "ro": "<b>Explicație:</b><br>1. (Verb) A deține ceva.<br>2. (Verb) A trebui sau a fi presupus să faci ceva.<br><b>Exemplu 1:</b> Ei <b>dețin</b> o casă mare.<br><b>Exemplu 2:</b> <b>Ar trebui</b> să mergem la culcare.",
-            "ru": "<b>Объяснение:</b><br>1. (Глагол) Владеть чем-либо.<br>2. (Глагол) Должен или предполагается что-то сделать.<br><b>Пример 1:</b> Они <b>владеют</b> большим домом.<br><b>Пример 2:</b> Мы <b>должны</b> идти спать.",
-            "es": "<b>Explicación:</b><br>1. (Verbo) Poseer o ser dueño de algo.<br>2. (Verbo) Tener que o deber hacer algo.<br><b>Ejemplo 1:</b> Ellos <b>poseen (tienen)</b> una casa grande.<br><b>Ejemplo 2:</b> <b>Deberíamos (tenemos que)</b> ir a dormir.",
-            "sv": "<b>Förklaring:</b><br>1. (Verb) Att äga något.<br>2. (Verb) Att böra eller måste göra något.<br><b>Exempel 1:</b> De <b>äger</b> ett stort hus.<br><b>Exempel 2:</b> Vi <b>borde (ska)</b> gå och sova.",
-            "th": "<b>คำอธิบาย:</b><br>1. (คำกริยา) เป็นเจ้าของบางสิ่ง<br>2. (คำกริยา) ต้องทำหรือควรทำบางสิ่ง<br><b>ตัวอย่าง 1:</b> พวกเขา<b>เป็นเจ้าของ</b>บ้านหลังใหญ่<br><b>ตัวอย่าง 2:</b> พวกเรา<b>ควรจะ</b>ไปนอน",
-            "de": "<b>Erklärung:</b><br>1. (Verb) Etwas besitzen.<br>2. (Verb) Etwas tun müssen oder sollen.<br><b>Beispiel 1:</b> Sie <b>besitzen</b> ein großes Haus.<br><b>Beispiel 2:</b> Wir <b>sollen</b> schlafen gehen.",
-            "uk": "<b>Пояснення:</b><br>1. (Дієслово) Володіти чимось.<br>2. (Дієслово) Мати обов'язок або потребу щось зробити.<br><b>Приклад 1:</b> Вони <b>володіють</b> великим будинком.<br><b>Приклад 2:</b> Ми <b>повинні</b> йти спати.",
-            "vi": "<b>Giải thích:</b><br>1. (Động từ) Sở hữu cái gì đó.<br>2. (Động từ) Phải hoặc đáng lẽ phải làm gì đó.<br><b>Ví dụ 1:</b> Họ <b>sở hữu</b> một ngôi nhà lớn.<br><b>Ví dụ 2:</b> Chúng ta <b>phải (đáng lẽ nên)</b> đi ngủ."
+            "ar": "<div dir='rtl'><b>الشرح:</b><br>1. (فعل) أن تكون مالكاً لشيء ما.<br>2. (فعل) أن تضطر للقيام بشيء (يجب أن).<br><b>مثال 1:</b> هم <b>يملكون</b> منزلاً كبيراً.<br><b>مثال 2:</b> هم <b>يجب (يُفترض بهم)</b> أن يذهبوا للنوم.</div>",
+            "be": "<b>Uitleg:</b><br>1. (Werkwoord) Bezitten.<br>2. (Werkwoord) Moeten.<br><b>Voorbeeld 1:</b> Zij <b>bezitten</b> een groot huis.<br><b>Voorbeeld 2:</b> Zij <b>horen</b> te gaan slapen.",
+            "da": "<b>Forklaring:</b><br>1. (Udsagnsord) At eje noget.<br>2. (Udsagnsord) At skulle gøre noget (at burde/skulle).<br><b>Eksempel 1:</b> De <b>ejer</b> et stort hus.<br><b>Eksempel 2:</b> De <b>skal</b> gå i seng.",
+            "en": "<b>Explanation:</b><br>1. (Verb) To own or possess something.<br>2. (Verb) To have to or be supposed to do something.<br><b>Example 1:</b> They <b>own</b> a big house.<br><b>Example 2:</b> They <b>are supposed to</b> go to sleep.",
+            "tl": "<b>Paliwanag:</b><br>1. (Pandiwa) Magmay-ari ng isang bagay.<br>2. (Pandiwa) Dapat o kailangang gawin ang isang bagay.<br><b>Halimbawa 1:</b> <b>May-ari</b> sila ng malaking bahay.<br><b>Halimbawa 2:</b> <b>Dapat</b> na silang matulog.",
+            "fi": "<b>Selitys:</b><br>1. (Verbi) Omistaa jotakin.<br>2. (Verbi) Pitäisi tai täytyy tehdä jotain.<br><b>Esimerkki 1:</b> He <b>omistavat</b> ison talon.<br><b>Esimerkki 2:</b> Heidän <b>pitäisi</b> mennä nukkumaan.",
+            "fr": "<b>Explication:</b><br>1. (Verbe) Posséder ou être propriétaire de quelque chose.<br>2. (Verbe) Devoir faire quelque chose ou être censé le faire.<br><b>Exemple 1:</b> Ils <b>possèdent</b> une grande maison.<br><b>Exemple 2:</b> Ils <b>sont censés (doivent)</b> aller dormir.",
+            "fo": "<b>Frágreiðing:</b><br>1. (Sagnorð) At eiga okkurt.<br>2. (Sagnorð) At eiga at gera okkurt (at skula).<br><b>Dømi 1:</b> Tey <b>eiga</b> eitt stórt hús.<br><b>Dømi 2:</b> Tey <b>eiga</b> at fara at sova.",
+            "kl": "<b>Nassoqqaat:</b><br>1. (Udsagnsord) Pigisaqarpoq.<br>2. (Udsagnsord) Pisussaavoq.<br><b>Assersuut 1:</b> Illorsuaqarput (They <b>own</b> a big house).<br><b>Assersuut 2:</b> Sinikkiartussaapput (They <b>are supposed to</b> go to sleep).",
+            "nl": "<b>Uitleg:</b><br>1. (Werkwoord) Iets bezitten.<br>2. (Werkwoord) Iets moeten doen of geacht worden te doen.<br><b>Voorbeeld 1:</b> Zij <b>bezitten (hebben)</b> een groot huis.<br><b>Voorbeeld 2:</b> Zij <b>horen (moeten)</b> te gaan slapen.",
+            "it": "<b>Spiegazione:</b><br>1. (Verbo) Possedere qualcosa.<br>2. (Verbo) Dover fare qualcosa o essere tenuti a farlo.<br><b>Esempio 1:</b> Loro <b>possiedono</b> una grande casa.<br><b>Esempio 2:</b> Loro <b>dovrebbero</b> andare a dormire.",
+            "ja": "<b>説明:</b><br>1. (動詞) 何かを所有する。<br>2. (動詞) 何かをしなければならない（～するべき）。<br><b>例文 1:</b> 彼らは大きな家を<b>所有して</b>います。<br><b>例文 2:</b> 彼らは寝る<b>べき（はず）</b>です。",
+            "zh": "<b>解释:</b><br>1. (动词) 拥有某物。<br>2. (动词) 应该或必须做某事。<br><b>例句 1:</b> 他们<b>拥有</b>一栋大房子。<br><b>例句 2:</b> 他们<b>应该</b>去睡觉了。",
+            "ku": "<b>Ravekirin:</b><br>1. (Lêker) Xwediyê tiştekî bûn.<br>2. (Lêker) Divê tiştek were kirin (pêwîst e).<br><b>Mînak 1:</b> Ew <b>xwediyê</b> xaniyek mezin in.<br><b>Mînak 2:</b> <b>Divê</b> ew biçin raze.",
+            "lv": "<b>Paskaidrojums:</b><br>1. (Darbības vārds) Piederēt kaut kam (būt īpašniekam).<br>2. (Darbības vārds) Vajadzība kaut ko darīt (vajadzētu).<br><b>Piemērs 1:</b> Viņiem <b>pieder</b> liela māja.<br><b>Piemērs 2:</b> Viņiem <b>vajadzētu</b> iet gulēt.",
+            "lt": "<b>Paaiškinimas:</b><br>1. (Veiksmažodis) Turėti kažką (būti savininku).<br>2. (Veiksmažodis) Privalėti ar turėti kažką daryti.<br><b>Pavyzdys 1:</b> Jie <b>turi (valdo)</b> didelį namą.<br><b>Pavyzdys 2:</b> Jie <b>turėtų</b> eiti miegoti.",
+            "no": "<b>Forklaring:</b><br>1. (Verb) Å eie noe.<br>2. (Verb) Å burde eller måtte gjøre noe.<br><b>Eksempel 1:</b> De <b>eier</b> et stort hus.<br><b>Eksempel 2:</b> De <b>bør (skal)</b> gå og legge seg.",
+            "fa": "<div dir='rtl'><b>توضیح:</b><br>1. (فعل) مالک بودن چیزی.<br>2. (فعل) مجبور بودن یا قرار بودن برای انجام کاری.<br><b>مثال 1:</b> آن‌ها یک خانه بزرگ <b>دارند (مالک هستند)</b>.<br><b>مثال 2:</b> آن‌ها <b>باید (قرار است)</b> بخوابند.</div>",
+            "pt": "<b>Explicação:</b><br>1. (Verbo) Possuir algo.<br>2. (Verbo) Ter que ou dever fazer algo.<br><b>Exemplo 1:</b> Eles <b>possuem</b> uma casa grande.<br><b>Exemplo 2:</b> Eles <b>devem (têm que)</b> ir dormir.",
+            "pl": "<b>Wyjaśnienie:</b><br>1. (Czasownik) Posiadać coś.<br>2. (Czasownik) Mieć obowiązek coś zrobić (powinienem/muszę).<br><b>Przykład 1:</b> Oni <b>posiadają</b> duży dom.<br><b>Przykład 2:</b> Oni <b>powinni</b> iść spać.",
+            "ro": "<b>Explicație:</b><br>1. (Verb) A deține ceva.<br>2. (Verb) A trebui sau a fi presupus să faci ceva.<br><b>Exemplu 1:</b> Ei <b>dețin</b> o casă mare.<br><b>Exemplu 2:</b> Ei <b>ar trebui</b> să meargă la culcare.",
+            "ru": "<b>Объяснение:</b><br>1. (Глагол) Владеть чем-либо.<br>2. (Глагол) Должен или предполагается что-то сделать.<br><b>Пример 1:</b> Они <b>владеют</b> большим домом.<br><b>Пример 2:</b> Они <b>должны</b> идти спать.",
+            "es": "<b>Explicación:</b><br>1. (Verbo) Poseer o ser dueño de algo.<br>2. (Verbo) Tener que o deber hacer algo.<br><b>Ejemplo 1:</b> Ellos <b>poseen (tienen)</b> una casa grande.<br><b>Ejemplo 2:</b> Ellos <b>deberían (tienen que)</b> ir a dormir.",
+            "sv": "<b>Förklaring:</b><br>1. (Verb) Att äga något.<br>2. (Verb) Att böra eller måste göra något.<br><b>Exempel 1:</b> De <b>äger</b> ett stort hus.<br><b>Exempel 2:</b> De <b>borde (ska)</b> gå och sova.",
+            "th": "<b>คำอธิบาย:</b><br>1. (คำกริยา) เป็นเจ้าของบางสิ่ง<br>2. (คำกริยา) ต้องทำหรือควรทำบางสิ่ง<br><b>ตัวอย่าง 1:</b> พวกเขา<b>เป็นเจ้าของ</b>บ้านหลังใหญ่<br><b>ตัวอย่าง 2:</b> พวกเขา<b>ควรจะ</b>ไปนอน",
+            "de": "<b>Erklärung:</b><br>1. (Verb) Etwas besitzen.<br>2. (Verb) Etwas tun müssen oder sollen.<br><b>Beispiel 1:</b> Sie <b>besitzen</b> ein großes Haus.<br><b>Beispiel 2:</b> Sie <b>sollen</b> schlafen gehen.",
+            "uk": "<b>Пояснення:</b><br>1. (Дієслово) Володіти чимось.<br>2. (Дієслово) Мати обов'язок або потребу щось зробити.<br><b>Приклад 1:</b> Вони <b>володіють</b> великим будинком.<br><b>Приклад 2:</b> Вони <b>повинні</b> йти спати.",
+            "vi": "<b>Giải thích:</b><br>1. (Động từ) Sở hữu cái gì đó.<br>2. (Động từ) Phải hoặc đáng lẽ phải làm gì đó.<br><b>Ví dụ 1:</b> Họ <b>sở hữu</b> một ngôi nhà lớn.<br><b>Ví dụ 2:</b> Họ <b>phải (đáng lẽ nên)</b> đi ngủ."
         }
     },
     { 
@@ -367,12 +377,14 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b> (Lýsingarorð) Eitthvað sem er jákvætt eða bragðast vel (í hvorugkyni).<br><b>Andheiti:</b> vont, slæmt.<br><b>Dæmi:</b> Það er mjög <b>gott</b> veður í dag.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b> (صفة) شيء إيجابي أو لذيذ (محايد).<br><b>مضاد:</b> سيء.<br><b>مثال:</b> الطقس <b>جيد</b> جداً اليوم.</div>",
+            "be": "<b>Uitleg:</b> (Bijvoeglijk naamwoord) Iets dat positief is of lekker smaakt (onzijdig).<br><b>Voorbeeld:</b> Het is heel <b>goed</b> weer vandaag.",
             "da": "<b>Forklaring:</b> (Tillægsord) Noget der er positivt eller smager godt (intetkøn).<br><b>Antonym:</b> dårligt.<br><b>Eksempel:</b> Det er meget <b>godt</b> vejr i dag.",
             "en": "<b>Explanation:</b> (Adjective) Something that is positive or tastes good (neuter).<br><b>Antonym:</b> bad.<br><b>Example:</b> The weather is very <b>good</b> today.",
             "tl": "<b>Paliwanag:</b> (Pang-uri) Isang bagay na positibo o masarap ang lasa (walang kasarian).<br><b>Kasalungat:</b> masama.<br><b>Halimbawa:</b> Napaka<b>ganda (mabuti)</b> ng panahon ngayon.",
             "fi": "<b>Selitys:</b> (Adjektiivi) Jotain positiivista tai hyvänmakuista (neutri).<br><b>Vastakohta:</b> huono.<br><b>Esimerkki:</b> Tänään on erittäin <b>hyvä</b> sää.",
             "fr": "<b>Explication:</b> (Adjectif) Quelque chose de positif ou qui a bon goût (neutre).<br><b>Antonyme:</b> mauvais.<br><b>Exemple:</b> Il fait un très <b>beau (bon)</b> temps aujourd'hui.",
             "fo": "<b>Frágreiðing:</b> (Lýsingarorð) Okkurt sum er jaligt ella smakkari væl (hvørkikyn).<br><b>Andheiti:</b> ringt.<br><b>Dømi:</b> Tað er sera <b>gott</b> veður í dag.",
+            "kl": "<b>Nassoqqaat:</b> (Lýsingarorð) Ajunngilaq, pitsaasoq.<br><b>Assersuut:</b> Ullumi sila <b>ajunngilaq</b> (gott veður).",
             "nl": "<b>Uitleg:</b> (Bijvoeglijk naamwoord) Iets dat positief is of lekker smaakt (onzijdig).<br><b>Antoniem:</b> slecht.<br><b>Voorbeeld:</b> Het is erg <b>goed</b> weer vandaag.",
             "it": "<b>Spiegazione:</b> (Aggettivo) Qualcosa di positivo o di buon sapore (neutro).<br><b>Antonimo:</b> cattivo.<br><b>Esempio:</b> Fa molto <b>bel (buon)</b> tempo oggi.",
             "ja": "<b>説明:</b> (形容詞) 肯定的なもの、または美味しいもの（中性形）。<br><b>対義語:</b> 悪い。<br><b>例文:</b> 今日はとても天気が<b>良い</b>です。",
@@ -399,12 +411,14 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b> (Eignarfornafn) Vísar til eignar hjá þeim sem er aðalpersóna í setningunni (í þágufalli).<br><br><b>Dæmi:</b> Hann er hjá vini <b>sínum</b>.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b> (ضمير ملكية) يشير إلى شيء يملكه الفاعل في الجملة (في حالة الجر).<br><b>مثال:</b> هو عند صديقـ<b>ـه</b>.</div>",
+            "be": "<b>Uitleg:</b> (Bezittelijk voornaamwoord) Verwijst naar de eigen vriend van het onderwerp (in de datief).<br><b>Voorbeeld:</b> Hij is bij <b>zijn</b> vriend.",
             "da": "<b>Forklaring:</b> (Ejestedord) Viser ejerskab for grundleddet i sætningen (i dativ).<br><b>Eksempel:</b> Han er hos <b>sin</b> ven.",
             "en": "<b>Explanation:</b> (Possessive pronoun) Refers to ownership by the subject of the sentence (in the dative case).<br><b>Example:</b> He is with <b>his (own)</b> friend.",
             "tl": "<b>Paliwanag:</b> (Panghalip na paari) Tumutukoy sa pagmamay-ari ng simuno sa pangungusap (sa dative case).<br><b>Halimbawa:</b> Kasama niya ang <b>kanyang (sariling)</b> kaibigan.",
             "fi": "<b>Selitys:</b> (Omistuspronomini) Viittaa lauseen subjektin omistukseen (datiivissa).<br><b>Esimerkki:</b> Hän on <b>omalla</b> ystävällään.",
             "fr": "<b>Explication:</b> (Pronom possessif) Fait référence à l'appartenance au sujet de la phrase (au datif).<br><b>Exemple:</b> Il est chez <b>son</b> ami.",
             "fo": "<b>Frágreiðing:</b> (Eignarfornavn) Vísir til eign hjá høvuðspersóninum í setninginum (í hvørjumfalli).<br><b>Dømi:</b> Hann er hjá vini <b>sínum</b>.",
+            "kl": "<b>Nassoqqaat:</b> (Fornavn) Nammineq pigisaq.<br><b>Assersuut:</b> Ikinngutiminiippoq (hjá vini <b>sínum</b>).",
             "nl": "<b>Uitleg:</b> (Bezittelijk voornaamwoord) Verwijst naar bezit door het onderwerp van de zin (in datief).<br><b>Voorbeeld:</b> Hij is bij <b>zijn (eigen)</b> vriend.",
             "it": "<b>Spiegazione:</b> (Pronome possessivo) Si riferisce al possesso da parte del soggetto della frase (al dativo).<br><b>Esempio:</b> Lui è con il <b>suo</b> amico.",
             "ja": "<b>説明:</b> (所有代名詞) 文の主語の所有を示します（与格）。<br><b>例文:</b> 彼は<b>（彼自身の）</b>友達と一緒にいます。",
@@ -431,12 +445,19 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b><br>1. (Sagnorð) Að leita og sjá eitthvað (að finna hlut).<br>2. (Sagnorð) Að skynja eitthvað, t.d. lykt eða hita (að finna lykt).<br><br><b>Dæmi 1:</b> Ég ætla að <b>finna</b> símann minn.<br><b>Dæmi 2:</b> Það er hægt að <b>finna</b> lyktina hingað.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b><br>1. (فعل) البحث ورؤية شيء ما (إيجاد).<br>2. (فعل) الإحساس بشيء مثل الرائحة أو الحرارة.<br><b>مثال 1:</b> سأبحث حتى <b>أجد</b> هاتفي.<br><b>مثال 2:</b> يمكن للمرء أن <b>يشم (يُحس بـ)</b> الرائحة من هنا.</div>",
+            "be": "<b>Uitleg:</b><br>1. (Werkwoord) Iets zoeken en zien (vinden).<br>2. (Werkwoord) Iets zintuiglijk waarnemen, bv. geur of warmte (voelen/ruiken).<br><b>Voorbeeld 1:</b> Ik ga mijn telefoon <b>vinden</b>.<br><b>Voorbeeld 2:</b> Je kunt de geur tot hier <b>ruiken (voelen)</b>.",
             "da": "<b>Forklaring:</b><br>1. (Udsagnsord) At lede og se noget (at finde).<br>2. (Udsagnsord) At sanse noget, f.eks. lugt eller varme.<br><b>Eksempel 1:</b> Jeg vil <b>finde</b> min telefon.<br><b>Eksempel 2:</b> Man kan <b>kendes (lugte)</b> lugten herhenne.",
             "en": "<b>Explanation:</b><br>1. (Verb) To search for and see something (find).<br>2. (Verb) To sense something, e.g. smell or heat (feel/smell).<br><b>Example 1:</b> I am going to <b>find</b> my phone.<br><b>Example 2:</b> It is possible to <b>smell (sense)</b> the odor from here.",
             "tl": "<b>Paliwanag:</b><br>1. (Pandiwa) Maghanap at makita ang isang bagay (mahanap).<br>2. (Pandiwa) Makaramdam o makaamoy ng isang bagay.<br><b>Halimbawa 1:</b> <b>Hahanapin (Mahahanap)</b> ko ang aking telepono.<br><b>Halimbawa 2:</b> <b>Maaamoy (Mararamdaman)</b> ang amoy mula rito.",
             "fi": "<b>Selitys:</b><br>1. (Verbi) Etsiä ja nähdä jotain (löytää).<br>2. (Verbi) Aistia jotain, esim. haju tai lämpö.<br><b>Esimerkki 1:</b> Aion <b>löytää</b> puhelimeni.<br><b>Esimerkki 2:</b> Hajun voi <b>haistaa (aistia)</b> tänne asti.",
             "fr": "<b>Explication:</b><br>1. (Verbe) Chercher et voir quelque chose (trouver).<br>2. (Verbe) Ressentir quelque chose, ex. une odeur ou la chaleur.<br><b>Exemple 1:</b> Je vais <b>trouver</b> mon téléphone.<br><b>Exemple 2:</b> Il est possible de <b>sentir</b> l'odeur d'ici.",
+            "fo": "<b>Frágreiðing:</b><br>1. (Sagnorð) At leita og síggja okkurt (at finna).<br>2. (Sagnorð) At merkja okkurt, t.d. lukt ella hita.<br><b>Dømi 1:</b> Eg fari at <b>finna</b> telefonina mína.<br><b>Dømi 2:</b> Tað ber til at <b>finna</b> (merkja) luktin higar.",
+            "kl": "<b>Nassoqqaat:</b><br>1. (Udsagnsord) Nassaarpoq.<br>2. (Udsagnsord) Malugaa.<br><b>Assersuut 1:</b> Oqarasuaatiga <b>nassaari</b>niarpara.<br><b>Assersuut 2:</b> Tipaa maanga <b>malunniuppoq</b>.",
+            "nl": "<b>Uitleg:</b><br>1. (Werkwoord) Iets zoeken en zien (vinden).<br>2. (Werkwoord) Iets zintuiglijk waarnemen, bv. geur of warmte (voelen/ruiken).<br><b>Voorbeeld 1:</b> Ik ga mijn telefoon <b>vinden</b>.<br><b>Voorbeeld 2:</b> Je kunt de geur tot hier <b>ruiken (voelen)</b>.",
+            "it": "<b>Spiegazione:</b><br>1. (Verbo) Cercare e vedere qualcosa (trovare).<br>2. (Verbo) Sentire qualcosa, ad es. un odore o il calore.<br><b>Esempio 1:</b> Ho intenzione di <b>trovare</b> il mio telefono.<br><b>Esempio 2:</b> È possibile <b>sentire (annusare)</b> l'odore fin qui.",
+            "ja": "<b>説明:</b><br>1. (動詞) 探して見つける（見つける）。<br>2. (動詞) 何かを感じる、例えば匂いや熱など。<br><b>例文 1:</b> 私は携帯電話を<b>見つけ</b>ます。<br><b>例文 2:</b> ここから匂いを<b>感じる（嗅ぐ）</b>ことができます。",
             "zh": "<b>解释:</b><br>1. (动词) 寻找并看见某物（找到）。<br>2. (动词) 感觉到某物，如气味或热量（感觉/闻到）。<br><b>例句 1:</b> 我要去<b>找到</b>我的手机。<br><b>例句 2:</b> 从这里就能<b>闻到（感觉）</b>味道。",
+            "ku": "<b>Ravekirin:</b><br>1. (Lêker) Lêgerîn û dîtina tiştekî (dîtin).<br>2. (Lêker) Hîskirina tiştekî, mînak bêhn an germî.<br><b>Mînak 1:</b> Ez ê telefona xwe <b>bibînim</b>.<br><b>Mînak 2:</b> Mirov dikare bêhnê heta vir <b>hîs bike</b>.",
             "lv": "<b>Paskaidrojums:</b><br>1. (Darbības vārds) Meklēt un redzēt kaut ko (atrast).<br>2. (Darbības vārds) Sajust kaut ko, piem., smaržu vai siltumu.<br><b>Piemērs 1:</b> Es plānoju <b>atrast</b> savu telefonu.<br><b>Piemērs 2:</b> To smaržu var <b>sajust</b> līdz pat šejienei.",
             "lt": "<b>Paaiškinimas:</b><br>1. (Veiksmažodis) Ieškoti ir pamatyti kažką (rasti).<br>2. (Veiksmažodis) Jausti kažką, pvz., kvapą ar karštį.<br><b>Pavyzdys 1:</b> Aš ketinu <b>rasti</b> savo telefoną.<br><b>Pavyzdys 2:</b> Galima <b>užuosti (pajausti)</b> kvapą net čia.",
             "no": "<b>Forklaring:</b><br>1. (Verb) Å lete og se noe (finne).<br>2. (Verb) Å sanse noe, f.eks. lukt eller varme.<br><b>Eksempel 1:</b> Jeg skal <b>finne</b> telefonen min.<br><b>Eksempel 2:</b> Man kan <b>kjenne (lukte)</b> lukten helt hit.",
@@ -458,11 +479,14 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b> (Ábendingarfornafn) Vísar á eitthvað ákveðið sem er nálægt, í þágufalli.<br><br><b>Dæmi:</b> Ég er í <b>þessum</b> skóla.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b> (اسم إشارة) يشير إلى شيء محدد قريب، في حالة الجر (هذا/هؤلاء).<br><b>مثال:</b> أنا في <b>هذا</b> المدرسة.</div>",
+            "be": "<b>Uitleg:</b> (Aanwijzend voornaamwoord) Wijst naar iets specifieks in de buurt, in de datief.<br><b>Voorbeeld:</b> Ik zit op <b>deze</b> school.",
             "da": "<b>Forklaring:</b> (Påpegende stedord) Henviser til noget bestemt, der er tæt på, i dativ (dette/disse).<br><b>Eksempel:</b> Jeg går på <b>denne</b> skole.",
             "en": "<b>Explanation:</b> (Demonstrative pronoun) Points to a specific thing that is nearby, in the dative case (this/these).<br><b>Example:</b> I am in <b>this</b> school.",
             "tl": "<b>Paliwanag:</b> (Panghalip pamatlig) Tumuturo sa isang tiyak na bagay na malapit, sa dative case (ito).<br><b>Halimbawa:</b> Ako ay nasa paaralang <b>ito</b>.",
             "fi": "<b>Selitys:</b> (Osoittava pronomini) Viittaa tiettyyn lähellä olevaan asiaan datiivissa (tämä).<br><b>Esimerkki:</b> Olen <b>tässä</b> koulussa.",
             "fr": "<b>Explication:</b> (Pronom démonstratif) Désigne une chose spécifique à proximité, au datif (ce/cet).<br><b>Exemple:</b> Je suis dans <b>cette</b> école.",
+            "fo": "<b>Frágreiðing:</b> (Ávísingarfornavn) Vísir á okkurt ávíst ið er nær, í hvørjumfalli.<br><b>Dømi:</b> Eg gangi í <b>hesum</b> skúla.",
+            "kl": "<b>Nassoqqaat:</b> (Fornavn) Una / matumani.<br><b>Assersuut:</b> Atuarfimmi <b>matumani</b>ippunga.",
             "zh": "<b>解释:</b> (指示代词) 指向附近特定的事物，与格形式（这/这些）。<br><b>例句:</b> 我在<b>这所</b>学校。",
             "lv": "<b>Paskaidrojums:</b> (Norādāmais vietniekvārds) Norāda uz kaut ko konkrētu tuvumā, datīvā (šajā).<br><b>Piemērs:</b> Es mācos <b>šajā</b> skolā.",
             "lt": "<b>Paaiškinimas:</b> (Parodomasis įvardis) Nurodo konkretų daiktą netoliese, naudininke (šiam/šioje).<br><b>Pavyzdys:</b> Aš mokausi <b>šioje</b> mokykloje.",
@@ -485,12 +509,19 @@ const exerciseData = [
         is_exp: "<b>Útskýring:</b><br>1. (Nafnorð) Karlkyns manneskja eða fullorðinn drengur.<br>2. (Óákveðið fornafn) Fólk almennt ('einhver' eða 'maður' í merkingunni fólk).<br><br><b>Dæmi 1:</b> Þessi <b>maður</b> er kennarinn minn.<br><b>Dæmi 2:</b> Hvernig gerir <b>maður</b> þetta?",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b><br>1. (اسم) إنسان ذكر أو فتى بالغ (رجل).<br>2. (ضمير نكرة) الناس بشكل عام (المرء).<br><b>مثال 1:</b> هذا <b>الرجل</b> هو معلمي.<br><b>مثال 2:</b> كيف يفعل <b>المرء</b> هذا؟</div>",
+            "be": "<b>Uitleg:</b><br>1. (Zelfstandig naamwoord) Een volwassen man.<br>2. (Onbepaald voornaamwoord) Mensen in het algemeen (men).<br><b>Voorbeeld 1:</b> Deze <b>man</b> is mijn leraar.<br><b>Voorbeeld 2:</b> Hoe doet <b>men</b> dit?",
             "da": "<b>Forklaring:</b><br>1. (Navneord) Hankøns menneske eller voksen dreng (mand).<br>2. (Ubestemt stedord) Folk generelt (man).<br><b>Eksempel 1:</b> Denne <b>mand</b> er min lærer.<br><b>Eksempel 2:</b> Hvordan gør <b>man</b> det?",
             "en": "<b>Explanation:</b><br>1. (Noun) A male human or adult boy (man).<br>2. (Indefinite pronoun) People in general (one / you).<br><b>Example 1:</b> This <b>man</b> is my teacher.<br><b>Example 2:</b> How does <b>one (you)</b> do this?",
             "tl": "<b>Paliwanag:</b><br>1. (Pangngalan) Lalaking tao o nasa hustong gulang na batang lalaki (lalaki).<br>2. (Hindi tiyak na panghalip) Tao sa pangkalahatan (ang isang tao).<br><b>Halimbawa 1:</b> Ang <b>lalaki</b>ng ito ay ang aking guro.<br><b>Halimbawa 2:</b> Paano ito ginagawa ng <b>isang tao</b>?",
             "fi": "<b>Selitys:</b><br>1. (Substantiivi) Miespuolinen ihminen (mies).<br>2. (Epämääräinen pronomini) Ihmiset yleensä (yksilö / ihminen).<br><b>Esimerkki 1:</b> Tämä <b>mies</b> on opettajani.<br><b>Esimerkki 2:</b> Miten <b>tämä (yksilö)</b> tehdään?",
             "fr": "<b>Explication:</b><br>1. (Nom) Humain de sexe masculin (homme).<br>2. (Pronom indéfini) Les gens en général (on).<br><b>Exemple 1:</b> Cet <b>homme</b> est mon professeur.<br><b>Exemple 2:</b> Comment <b>on</b> fait ça ?",
+            "fo": "<b>Frágreiðing:</b><br>1. (Navnorð) Kallkyns menniskja (maður).<br>2. (Óvíst fornavn) Fólk sum heild (man).<br><b>Dømi 1:</b> Hesin <b>maður</b> er lærarin hjá mær.<br><b>Dømi 2:</b> Hvussu ger <b>man</b> hetta?",
+            "kl": "<b>Nassoqqaat:</b><br>1. (Navneord) Angut.<br>2. (Fornavn) Inuk.<br><b>Assersuut 1:</b> <b>Angut</b> una ilinniartitsisoraara.<br><b>Assersuut 2:</b> Qanoq iliortarpaat? (Hvernig gerir <b>maður</b> þetta?)",
+            "nl": "<b>Uitleg:</b><br>1. (Zelfstandig naamwoord) Een volwassen man.<br>2. (Onbepaald voornaamwoord) Mensen in het algemeen (men).<br><b>Voorbeeld 1:</b> Deze <b>man</b> is mijn leraar.<br><b>Voorbeeld 2:</b> Hoe doet <b>men</b> dit?",
+            "it": "<b>Spiegazione:</b><br>1. (Sostantivo) Un essere umano maschio (uomo).<br>2. (Pronome indefinito) Le persone in generale (si / uno).<br><b>Esempio 1:</b> Questo <b>uomo</b> è il mio insegnante.<br><b>Esempio 2:</b> Come si fa questo (come lo fa <b>uno</b>)?",
+            "ja": "<b>説明:</b><br>1. (名詞) 男性の人間（男の人）。<br>2. (不定代名詞) 一般的な人々（人）。<br><b>例文 1:</b> この<b>男の人</b>は私の先生です。<br><b>例文 2:</b> <b>人</b>はこれをどうやってするの？",
             "zh": "<b>解释:</b><br>1. (名词) 男性人类或成年男孩（男人）。<br>2. (不定代词) 泛指人们（人们/一个人）。<br><b>例句 1:</b> 这个<b>男人</b>是我的老师。<br><b>例句 2:</b> <b>人们</b>怎么做这个？",
+            "ku": "<b>Ravekirin:</b><br>1. (Navdêr) Mirovê nêr (mêr).<br>2. (Cînavê nediyar) Mirov bi gelemperî (mirov).<br><b>Mînak 1:</b> Ev <b>mêr</b> mamosteyê min e.<br><b>Mînak 2:</b> <b>Mirov</b> vî karî çawa dike?",
             "lv": "<b>Paskaidrojums:</b><br>1. (Lietvārds) Vīriešu dzimtes cilvēks (vīrietis).<br>2. (Nenoteiktais vietniekvārds) Cilvēki kopumā (kāds/cilvēks).<br><b>Piemērs 1:</b> Šis <b>vīrietis</b> ir mans skolotājs.<br><b>Piemērs 2:</b> Kā <b>to (cilvēks)</b> dara?",
             "lt": "<b>Paaiškinimas:</b><br>1. (Daiktavardis) Vyriškos lyties žmogus (vyras).<br>2. (Neapibrėžtasis įvardis) Žmonės apskritai (žmogus / vienas).<br><b>Pavyzdys 1:</b> Šis <b>vyras</b> yra mano mokytojas.<br><b>Pavyzdys 2:</b> Kaip <b>tai (žmogus)</b> daroma?",
             "no": "<b>Forklaring:</b><br>1. (Substantiv) En mannlig person (mann).<br>2. (Ubestemt pronomen) Folk generelt (man).<br><b>Eksempel 1:</b> Denne <b>mannen</b> er læreren min.<br><b>Eksempel 2:</b> Hvordan gjør <b>man</b> dette?",
@@ -509,26 +540,33 @@ const exerciseData = [
     },
     { 
         text: "enn", 
-        is_exp: "<b>Útskýring:</b><br>1. (Atviksorð) Eitthvað sem er að gerast áfram (oft notað sem 'ennþá').<br>2. (Atviksorð) Til að stækka orð (t.d. enn stærri).<br><br><b>Dæmi 1:</b> Ertu <b>enn</b> að læra?<br><b>Dæmi 2:</b> Hann er <b>enn</b> stærri en ég.",
+        is_exp: "<b>Útskýring:</b><br>1. (Atviksorð) Eitthvað sem er að gerast áfram (oft notað sem 'ennþá').<br>2. (Atviksorð) Til að stækka orð í samanburði (t.d. enn stærri).<br><br><b>Dæmi 1:</b> Ertu <b>enn</b> að læra?<br><b>Dæmi 2:</b> Hann er <b>enn</b> stærri en ég.",
         translations: {
             "ar": "<div dir='rtl'><b>الشرح:</b><br>1. (ظرف) شيء لا يزال يحدث (لا يزال).<br>2. (ظرف) لزيادة صفة (أكثر).<br><b>مثال 1:</b> هل ما زلت تتعلم <b>(حتى الآن)</b>؟<br><b>مثال 2:</b> إنه <b>أكثر (حتى)</b> ضخامة مني.</div>",
-            "da": "<b>Forklaring:</b><br>1. (Biord) Noget der stadig sker (endnu).<br>2. (Biord) Til at forstørre et ord (endnu større).<br><b>Eksempel 1:</b> Er du <b>stadig</b> ved at lære?<br><b>Eksempel 2:</b> Han er <b>endnu</b> større end mig.",
+            "be": "<b>Uitleg:</b><br>1. (Bijwoord) Iets dat nog steeds gebeurt (nog steeds).<br>2. (Bijwoord) Om een vergrotende trap te versterken (nog groter).<br><b>Voorbeeld 1:</b> Ben je <b>nog steeds</b> aan het leren?<br><b>Voorbeeld 2:</b> Hij is <b>nog</b> groter dan ik.",
+            "da": "<b>Forklaring:</b><br>1. (Biord) Noget der stadig sker (endnu/stadig).<br>2. (Biord) Til at forstærke et ord i sammenligning (endnu større).<br><b>Eksempel 1:</b> Lærer du <b>stadig</b>?<br><b>Eksempel 2:</b> Han er <b>endnu</b> større end mig.",
             "en": "<b>Explanation:</b><br>1. (Adverb) Something that is still happening (still).<br>2. (Adverb) To magnify a comparative word (even bigger).<br><b>Example 1:</b> Are you <b>still</b> studying?<br><b>Example 2:</b> He is <b>even</b> bigger than me.",
-            "tl": "<b>Paliwanag:</b><br>1. (Pang-abay) Isang bagay na patuloy na nangyayari (pa rin).<br>2. (Pang-abay) Upang palakihin ang salita (mas pa).<br><b>Halimbawa 1:</b> Nag-aaral ka <b>pa rin</b> ba?<br><b>Halimbawa 2:</b> Siya ay <b>mas (lalo pang)</b> malaki kaysa sa akin.",
-            "fi": "<b>Selitys:</b><br>1. (Adverbi) Jotain, mikä yhä tapahtuu (vielä/yhä).<br>2. (Adverbi) Suurentamaan sanaa (vielä isompi).<br><b>Esimerkki 1:</b> Opiskeletko <b>yhä</b>?<br><b>Esimerkki 2:</b> Hän on <b>vielä</b> isompi kuin minä.",
+            "tl": "<b>Paliwanag:</b><br>1. (Pang-abay) Isang bagay na patuloy na nangyayari (pa rin).<br>2. (Pang-abay) Upang palakihin ang salita sa paghahambing (mas pa).<br><b>Halimbawa 1:</b> Nag-aaral ka <b>pa rin</b> ba?<br><b>Halimbawa 2:</b> Siya ay <b>mas (lalo pang)</b> malaki kaysa sa akin.",
+            "fi": "<b>Selitys:</b><br>1. (Adverbi) Jotain, mikä yhä tapahtuu (vielä/yhä).<br>2. (Adverbi) Suurentamaan sanaa vertailussa (vielä isompi).<br><b>Esimerkki 1:</b> Opiskeletko <b>yhä</b>?<br><b>Esimerkki 2:</b> Hän on <b>vielä</b> isompi kuin minä.",
             "fr": "<b>Explication:</b><br>1. (Adverbe) Quelque chose qui se passe encore (encore/toujours).<br>2. (Adverbe) Pour amplifier un mot comparatif (encore plus grand).<br><b>Exemple 1:</b> Es-tu <b>encore</b> en train d'étudier ?<br><b>Exemple 2:</b> Il est <b>encore</b> plus grand que moi.",
+            "fo": "<b>Frágreiðing:</b><br>1. (Hjáorð) Okkurt sum framvegis hendir (enn).<br>2. (Hjáorð) Til at forsterka lýsingarorð (enn størri).<br><b>Dømi 1:</b> Ert tú <b>enn</b> at læra?<br><b>Dømi 2:</b> Hann er <b>enn</b> størri enn eg.",
+            "kl": "<b>Nassoqqaat:</b><br>1. (Udsagnsord) Suli.<br>2. Suli annerusoq.<br><b>Assersuut 1:</b> <b>Suli</b> atuarit?<br><b>Assersuut 2:</b> Uannit <b>suli</b> angineruvoq.",
+            "nl": "<b>Uitleg:</b><br>1. (Bijwoord) Iets dat nog steeds gebeurt (nog steeds).<br>2. (Bijwoord) Om een vergrotende trap te versterken (nog groter).<br><b>Voorbeeld 1:</b> Ben je <b>nog steeds</b> aan het leren?<br><b>Voorbeeld 2:</b> Hij is <b>nog</b> groter dan ik.",
+            "it": "<b>Spiegazione:</b><br>1. (Avverbio) Qualcosa che sta ancora accadendo (ancora).<br>2. (Avverbio) Per amplificare una parola comparativa (ancora più grande).<br><b>Esempio 1:</b> Stai <b>ancora</b> studiando?<br><b>Esempio 2:</b> Lui è <b>ancora</b> più grande di me.",
+            "ja": "<b>説明:</b><br>1. (副詞) まだ起こっていること（まだ）。<br>2. (副詞) 比較の言葉を強調するため（さらに大きい）。<br><b>例文 1:</b> あなたは<b>まだ</b>勉強していますか？<br><b>例文 2:</b> 彼は私よりも<b>さらに</b>大きいです。",
             "zh": "<b>解释:</b><br>1. (副词) 仍在发生的事情（还/仍然）。<br>2. (副词) 放大比较级词语（甚至更大）。<br><b>例句 1:</b> 你<b>仍然</b>在学习吗？<br><b>例句 2:</b> 他甚至比我<b>还</b>大。",
-            "lv": "<b>Paskaidrojums:</b><br>1. (Apstākļa vārds) Kaut kas, kas joprojām notiek (vēl/aizvien).<br>2. (Apstākļa vārds) Lai palielinātu vārda nozīmi (vēl lielāks).<br><b>Piemērs 1:</b> Vai tu <b>joprojām</b> mācies?<br><b>Piemērs 2:</b> Viņš ir <b>vēl</b> lielāks par mani.",
+            "ku": "<b>Ravekirin:</b><br>1. (Hoker) Tiştek ku hîn jî diqewime (hîn).<br>2. (Hoker) Ji bo xurtkirina peyveke berawirdî (hê meztir).<br><b>Mînak 1:</b> Tu <b>hîn</b> dixwînî?<br><b>Mînak 2:</b> Ew ji min <b>hê</b> meztir e.",
+            "lv": "<b>Paskaidrojums:</b><br>1. (Apstākļa vārds) Kaut kas, kas joprojām notiek (vēl/aizvien).<br>2. (Apstākļa vārds) Lai palielinātu vārda nozīmi salīdzinājumā (vēl lielāks).<br><b>Piemērs 1:</b> Vai tu <b>joprojām</b> mācies?<br><b>Piemērs 2:</b> Viņš ir <b>vēl</b> lielāks par mani.",
             "lt": "<b>Paaiškinimas:</b><br>1. (Prievezmis) Kažkas, kas vis dar vyksta (vis dar).<br>2. (Prievezmis) Sustiprinti lyginamąjį žodį (dar didesnis).<br><b>Pavyzdys 1:</b> Ar tu <b>vis dar</b> mokaisi?<br><b>Pavyzdys 2:</b> Jis yra <b>dar</b> didesnis už mane.",
             "no": "<b>Forklaring:</b><br>1. (Adverb) Noe som fremdeles skjer (ennå/fremdeles).<br>2. (Adverb) For å forsterke et komparativt ord (enda større).<br><b>Eksempel 1:</b> Studerer du <b>fremdeles</b>?<br><b>Eksempel 2:</b> Han er <b>enda</b> større enn meg.",
-            "fa": "<div dir='rtl'><b>توضیح:</b><br>1. (قید) چیزی که هنوز در حال رخ دادن است (هنوز).<br>2. (قید) برای تشدید یک کلمه تفضیلی (حتی بزرگتر).<br><b>مثال 1:</b> آیا <b>هنوز</b> در حال یادگیری هستی؟<br><b>مثال 2:</b> او <b>حتی (بیشتر)</b> بزرگتر از من است.</div>",
+            "fa": "<div dir='rtl'><b>توضیح:</b><br>1. (قید) چیزی که هنوز در حال رخ دادن است (هنوز).<br>2. (قید) برای تشدید یک کلمه تفضیلی در مقایسه (حتی بزرگتر).<br><b>مثال 1:</b> آیا <b>هنوز</b> در حال یادگیری هستی؟<br><b>مثال 2:</b> او <b>حتی (بیشتر)</b> بزرگتر از من است.</div>",
             "pt": "<b>Explicação:</b><br>1. (Advérbio) Algo que ainda está acontecendo (ainda).<br>2. (Advérbio) Para ampliar uma palavra comparativa (ainda maior).<br><b>Exemplo 1:</b> Você <b>ainda</b> está estudando?<br><b>Exemplo 2:</b> Ele é <b>ainda</b> maior do que eu.",
             "pl": "<b>Wyjaśnienie:</b><br>1. (Przysłówek) Coś, co wciąż się dzieje (nadal/wciąż).<br>2. (Przysłówek) Aby wzmocnić słowo w stopniu wyższym (jeszcze większy).<br><b>Przykład 1:</b> Czy <b>nadal</b> się uczysz?<br><b>Przykład 2:</b> On jest <b>jeszcze</b> większy ode mnie.",
             "ro": "<b>Explicație:</b><br>1. (Adverb) Ceva care se întâmplă încă (încă/mai).<br>2. (Adverb) Pentru a amplifica un cuvânt comparativ (și mai mare).<br><b>Exemplu 1:</b> <b>Încă</b> mai înveți?<br><b>Exemplu 2:</b> El este <b>și mai</b> mare decât mine.",
             "ru": "<b>Объяснение:</b><br>1. (Наречие) То, что все еще происходит (еще/все еще).<br>2. (Наречие) Для усиления сравнительного слова (еще больше).<br><b>Пример 1:</b> Ты <b>все еще</b> учишься?<br><b>Пример 2:</b> Он <b>еще</b> больше меня.",
             "es": "<b>Explicación:</b><br>1. (Adverbio) Algo que todavía está sucediendo (aún/todavía).<br>2. (Adverbio) Para amplificar una palabra comparativa (aún más grande).<br><b>Ejemplo 1:</b> ¿<b>Todavía</b> estás estudiando?<br><b>Ejemplo 2:</b> Él es <b>aún</b> más grande que yo.",
             "sv": "<b>Förklaring:</b><br>1. (Adverb) Något som fortfarande händer (ännu/fortfarande).<br>2. (Adverb) För att förstärka ett komparativt ord (ännu större).<br><b>Exempel 1:</b> Pluggar du <b>fortfarande</b>?<br><b>Exempel 2:</b> Han är <b>ännu</b> större än jag.",
-            "th": "<b>คำอธิบาย:</b><br>1. (คำกริยาวิเศษณ์) สิ่งที่ยังคงเกิดขึ้น (ยังคง)<br>2. (คำกริยาวิเศษณ์) เพื่อขยายคำคุณศัพท์เปรียบเทียบ (ยิ่งกว่า)<br><b>ตัวอย่าง 1:</b> คุณ<b>ยังคง</b>เรียนอยู่ไหม?<br><b>ตัวอย่าง 2:</b> เขาตัวใหญ่กว่าฉัน<b>อีก</b>",
+            "th": "<b>คำอธิบาย:</b><br>1. (คำกริยาวิเศษณ์) สิ่งที่ยังคงเกิดขึ้น (ยังคง)<br>2. (คำกริยาวิเศษณ์) เพื่อขยายคำในการเปรียบเทียบ (ยิ่งกว่า)<br><b>ตัวอย่าง 1:</b> คุณ<b>ยังคง</b>เรียนอยู่ไหม?<br><b>ตัวอย่าง 2:</b> เขาตัวใหญ่กว่าฉัน<b>อีก</b>",
             "de": "<b>Erklärung:</b><br>1. (Adverb) Etwas, das immer noch passiert (noch/immer noch).<br>2. (Adverb) Um ein Vergleichswort zu verstärken (noch größer).<br><b>Beispiel 1:</b> Lernst du <b>immer noch</b>?<br><b>Beispiel 2:</b> Er ist <b>noch</b> größer als ich.",
             "uk": "<b>Пояснення:</b><br>1. (Прислівник) Те, що все ще відбувається (ще/досі).<br>2. (Прислівник) Для підсилення порівняльного слова (ще більший).<br><b>Приклад 1:</b> Ти <b>досі</b> вчишся?<br><b>Приклад 2:</b> Він <b>ще</b> більший за мене.",
             "vi": "<b>Giải thích:</b><br>1. (Trạng từ) Điều gì đó vẫn đang xảy ra (vẫn).<br>2. (Trạng từ) Để phóng đại một từ so sánh (thậm chí lớn hơn).<br><b>Ví dụ 1:</b> Bạn <b>vẫn</b> đang học à?<br><b>Ví dụ 2:</b> Anh ấy <b>thậm chí (còn)</b> lớn hơn tôi."
@@ -606,12 +644,14 @@ function findNextUnfinished() {
             <select id="languageSelect" onchange="updateUI()">
                 <option value="" selected disabled>Veldu tungumál...</option>
                 <option value="ar">Arabíska – العربية</option>
+                <option value="be">Belgíska (Flæmska) – Vlaams</option>
                 <option value="da">Danska – Dansk</option>
                 <option value="en">Enska – English</option>
                 <option value="tl">Filippseyska – Tagalog</option>
                 <option value="fi">Finnska – Suomi</option>
                 <option value="fr">Franska – Français</option>
                 <option value="fo">Færeyska – Føroyskt</option>
+                <option value="kl">Grænlenska – Kalaallisut</option>
                 <option value="nl">Hollenska – Nederlands</option>
                 <option value="it">Ítalska – Italiano</option>
                 <option value="ja">Japanska – 日本語</option>
